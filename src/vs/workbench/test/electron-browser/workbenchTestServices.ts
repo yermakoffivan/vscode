@@ -170,6 +170,7 @@ export class TestNativeHostService implements INativeHostService {
 	async openGPUInfoWindow(): Promise<void> { }
 	async openContentTracingWindow(): Promise<void> { }
 	async resolveProxy(url: string): Promise<string | undefined> { return undefined; }
+	async resolveProxyWithPackage() { return []; }
 	async lookupAuthorization(authInfo: AuthInfo): Promise<Credentials | undefined> { return undefined; }
 	async lookupKerberosAuthorization(url: string): Promise<string | undefined> { return undefined; }
 	async loadCertificates(): Promise<string[]> { return []; }

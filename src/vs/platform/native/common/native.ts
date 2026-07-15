@@ -52,6 +52,11 @@ export interface IOSStatistics {
 	loadavg: number[];
 }
 
+export interface IOSProxy {
+	readonly kind: 'direct' | 'http' | 'socks';
+	readonly host?: string;
+}
+
 export interface INativeHostOptions {
 	readonly targetWindowId?: number;
 }
@@ -301,6 +306,7 @@ export interface ICommonNativeHostService {
 
 	// Connectivity
 	resolveProxy(url: string): Promise<string | undefined>;
+	resolveProxyWithPackage(url: string): Promise<IOSProxy[]>;
 	lookupAuthorization(authInfo: AuthInfo): Promise<Credentials | undefined>;
 	lookupKerberosAuthorization(url: string): Promise<string | undefined>;
 	loadCertificates(): Promise<string[]>;
